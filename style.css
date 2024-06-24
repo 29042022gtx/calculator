@@ -1,0 +1,38 @@
+:root {
+  --dark: #222;
+  --steel: #efefef;
+  --gray: #bbb;
+  --cloud: #fcfcfc;
+  --radius: 4px;
+}
+
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 4px 0;
+  width: 12em;
+  padding: 4px;
+  font-size: 1.2em;
+  background-color: var(--steel);
+  border-radius: var(--radius);
+}
+
+.calculator .display,
+.calculator button {
+  border: 1px solid var(--gray);
+  border-radius: var(--radius);
+}
+
+.calculator .display {
+  width: 100%;
+  aspect-ratio: 3;
+  background-color: white;
+}
+
+.calculator button {
+  width: 24%;
+  aspect-ratio: 1.5;
+  color: var(--dark);
+  background-color: var(--cloud);
+}
