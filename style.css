@@ -4,9 +4,10 @@
   --gray: #bbb;
   --cloud: #fcfcfc;
   --radius: 4px;
+  --display-font-size: 2em;
 }
 
-.calculator {
+#calculator {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -18,21 +19,29 @@
   border-radius: var(--radius);
 }
 
-.calculator #display,
-.calculator button {
+#calculator #display,
+#calculator button {
   border: 1px solid var(--gray);
   border-radius: var(--radius);
 }
 
-.calculator #display {
+#calculator #display {
   width: 100%;
-  aspect-ratio: 3;
+  padding: 4px 0;
+  height: var(--display-font-size);
+  line-height: var(--display-font-size);
+  font-size: var(--display-font-size);
   background-color: white;
 }
 
-.calculator button {
+#calculator button {
   width: 24%;
   aspect-ratio: 1.5;
   color: var(--dark);
   background-color: var(--cloud);
+  transition: all .2s;
+}
+
+#calculator button:active {
+  border-color: transparent;
 }
