@@ -18,13 +18,13 @@
   border-radius: var(--radius);
 }
 
-.calculator .display,
+.calculator #display,
 .calculator button {
   border: 1px solid var(--gray);
   border-radius: var(--radius);
 }
 
-.calculator .display {
+.calculator #display {
   width: 100%;
   aspect-ratio: 3;
   background-color: white;

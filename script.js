@@ -1,4 +1,8 @@
+let display = document.querySelector('#display')
 
+function populate(val) {
+  display.textContent += val
+}
 
 function operate(a, operator, b) {
   switch (operator) {
