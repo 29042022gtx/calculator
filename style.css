@@ -18,11 +18,15 @@ html {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 4px 0;
-  width: 12em;
-  padding: 4px;
+  width: 15em;
   font-size: 1.2em;
+  padding: 4px;
   background-color: var(--steel);
   border-radius: var(--radius);
+}
+
+#calculator * {
+  font-size: 1em;
 }
 
 #calculator #display,
@@ -33,11 +37,16 @@ html {
 
 #calculator #display {
   width: 100%;
-  padding: 4px 0;
   height: var(--display-font-size);
+  padding: 4px 0;
   line-height: var(--display-font-size);
   font-size: var(--display-font-size);
   background-color: white;
+}
+
+#calculator #display:focus {
+  outline: none;
+  border-style: dashed;
 }
 
 #calculator button {
@@ -60,4 +69,13 @@ html {
 #calculator #delete {
   color: white;
   background-color: var(--yellow);
+}
+
+@media screen and (max-width: 450px) {
+  #calculator {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 300px;
+    font-size: 1.5em;
+  }
 }
