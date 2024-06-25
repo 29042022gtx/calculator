@@ -11,10 +11,10 @@ function clickCalculator(event = new Event()) {
     case 'calculator':
     case 'display':
       break;
-    case 'clear':
+    case 'delete':
       deleteCharacter();
       break;
-    case 'allClear':
+    case 'clear':
       console.clear()
       clearAll();
       break;
@@ -24,21 +24,24 @@ function clickCalculator(event = new Event()) {
     case 'operator':
       b = parseFloat(display.textContent) || 0;
       if (operator == null)
-        a = b;
+        a = b
       else
-        a = operate(a, operator, b);
-      console.log(operator + b);
+        a = round(operate(a, operator, b), 5);
+      console.warn(operator + b);
       console.log(a);
       clearDisplay();
       operator = event.target.textContent;
       break;
     case 'operate':
-      if (operator == null) {
-        a = parseFloat(display.textContent) || 0;
-        break;
-      }
       b = parseFloat(display.textContent) || 0;
-      a = operate(a, operator, b);
+      if (operator == null)
+        a = b
+      else
+        a = round(operate(a, operator, b), 5);
+
+      console.warn(operator + b);
+      console.log(a);
+
       clearDisplay();
       populate('' + a)
       operator = null;
@@ -46,6 +49,11 @@ function clickCalculator(event = new Event()) {
     default: 
       populate(event.target.textContent)
   }
+}
+
+function round(n, d) {
+  d = 10**d
+  return Math.round(n * d) / d
 }
 
 function deleteCharacter() {

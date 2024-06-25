@@ -3,8 +3,14 @@
   --steel: #efefef;
   --gray: #bbb;
   --cloud: #fcfcfc;
+  --blue: #2d77ff;
+  --yellow: #ffcf10;
   --radius: 4px;
   --display-font-size: 2em;
+}
+
+html {
+  font-family: sans-serif;
 }
 
 #calculator {
@@ -44,4 +50,14 @@
 
 #calculator button:active {
   border-color: transparent;
+}
+
+#calculator #operate {
+  color: white;
+  background-color: var(--blue);
+}
+
+#calculator #delete {
+  color: white;
+  background-color: var(--yellow);
 }
